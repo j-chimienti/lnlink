@@ -94,8 +94,7 @@ async function click_buy_button()
 	const label = `lnlink-${uuidv4()}`
 
 	const description = make_description(STATE)
-	// todo: hardcode
-	const prefix = "ws://" //location.protocol === "https:" ? "wss://" : "ws://"
+	const prefix = location.protocol === "https:" ? "wss://" : "ws://"
 	const amount_msat = data.price == null ? "any" : (+data.price) * 1000
 
 	try {
