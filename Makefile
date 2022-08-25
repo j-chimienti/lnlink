@@ -1,3 +1,3 @@
 
 dist:
-	rsync -avzP ./ charon:/www/jb55/public/lnlink/link/
+	git push origin head

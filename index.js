@@ -490,7 +490,9 @@ function sleep(ms) {
 async function wait_for_invoice(auth, label) {
 	while (true) {
 		try {
+			console.log("waitinvoice", label)
 			const res = await make_request("waitinvoice", auth, {label})
+			console.log("got invoice response", res)
 			return res
 		} catch {
 			console.log("disconnected... trying waitinvoice again")
