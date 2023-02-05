@@ -1,5 +1,11 @@
 let STATE
 
+
+// todo: hardcode
+function makeLabel() {
+	return `pollofeed.com,lnlink-${uuidv4()}`
+}
+
 async function go() {
 	const state = {}
 
@@ -91,7 +97,7 @@ async function click_buy_button()
 {
 	const {data} = STATE
 	const product = get_product_name(data.product)
-	const label = `lnlink-${uuidv4()}`
+	const label = makeLabel()
 
 	const description = make_description(STATE)
 	const prefix = location.protocol === "https:" ? "wss://" : "ws://"
